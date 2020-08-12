@@ -1,7 +1,7 @@
 {
     "name": "cblink-service/wechat-official-account",
     "description": "Package description here.",
-    "license": "LGPL",
+    "license": "MIT",
     "authors": [
         {
             "name": "mouyong",
