@@ -18,7 +18,7 @@ abstract class AbstractTemplateMessage
         return $this;
     }
 
-    abstract function getService();
+    abstract public function getService();
 
     abstract public function send();
 }
