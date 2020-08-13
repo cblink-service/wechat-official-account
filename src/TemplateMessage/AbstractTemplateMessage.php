@@ -22,6 +22,11 @@ abstract class AbstractTemplateMessage
         return $this;
     }
 
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
     abstract public function getService();
 
     abstract public function send();
