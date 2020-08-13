@@ -4,6 +4,8 @@ namespace Cblink\Service\Wechat\OfficialAccount\TemplateMessage;
 
 abstract class AbstractNotification
 {
+    use DefaultTemplateMessageDataItemTrait;
+
     protected $data = [
         'touser' => '',
         'template_id' => '',
