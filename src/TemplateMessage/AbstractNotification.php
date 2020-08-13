@@ -69,9 +69,14 @@ abstract class AbstractNotification
         return $this;
     }
 
-    public function toArray()
+    public function getTemplate()
     {
         return $this->data;
+    }
+
+    public function toArray()
+    {
+        return $this->getTemplate();
     }
 
     public function toJson()
