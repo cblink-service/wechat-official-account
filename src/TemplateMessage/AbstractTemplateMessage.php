@@ -23,9 +23,8 @@ abstract class AbstractTemplateMessage
 
     public function __construct(AbstractNotification $notice = null, $config = [])
     {
-        $this->notice = $this->setNotice($notice);
-
-        $this->config = $config;
+        $this->setNotice($notice);
+        $this->setConfig($config);
     }
 
     public function setNotice($notice)
@@ -38,6 +37,13 @@ abstract class AbstractTemplateMessage
     public function getNotice()
     {
         return $this->notice;
+    }
+
+    public function setConfig($config)
+    {
+        $this->config = $config;
+
+        return $this;
     }
 
     public function getConfig()
