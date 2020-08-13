@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Customization\LittlePainter\Service\TemplateMessage;
+namespace Cblink\Service\Wechat\OfficialAccount\TemplateMessage;
 
 abstract class AbstractTemplateMessage
 {
