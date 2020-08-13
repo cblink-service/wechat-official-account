@@ -2,11 +2,15 @@
 
 namespace Cblink\Service\Wechat\OfficialAccount\TemplateMessage;
 
+use Cblink\Service\Wechat\OfficialAccount\Application;
+
 abstract class AbstractTemplateMessage
 {
     protected $config;
 
     protected $notice;
+
+    protected $app;
 
     public function __construct(AbstractNotification $notice = null, $config = [])
     {
@@ -27,7 +31,14 @@ abstract class AbstractTemplateMessage
         return $this->config;
     }
 
-    abstract public function getService();
+    public function getService()
+    {
+        if (empty($this->app)) {
+            $this->app = new Application($this->getConfig());
+        }
+
+        return $this->app->official_account;
+    }
 
     abstract public function send();
 }
