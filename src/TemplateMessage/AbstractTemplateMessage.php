@@ -6,11 +6,20 @@ use Cblink\Service\Wechat\OfficialAccount\Application;
 
 abstract class AbstractTemplateMessage
 {
-    protected $config;
+    /**
+     * @var Application
+     */
+    protected $app;
 
+    /**
+     * @var AbstractNotification
+     */
     protected $notice;
 
-    protected $app;
+    /**
+     * @var array
+     */
+    protected $config;
 
     public function __construct(AbstractNotification $notice = null, $config = [])
     {
@@ -40,5 +49,12 @@ abstract class AbstractTemplateMessage
         return $this->app->official_account;
     }
 
-    abstract public function send();
+    public function send()
+    {
+        if (empty($this->notice)) {
+            throw new \RuntimeException("未设置要发送的消息");
+        }
+
+        return $this->getService()->send($this->notice->getTemplate());
+    }
 }
