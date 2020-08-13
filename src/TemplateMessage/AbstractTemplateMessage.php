@@ -66,6 +66,8 @@ abstract class AbstractTemplateMessage
             throw new \RuntimeException("未设置要发送的消息");
         }
 
-        return $this->getService()->send($this->getNotice()->getTemplate());
+        return $this->getService()->send([
+            'template' => $this->getNotice()->getTemplate(),
+        ]);
     }
 }
