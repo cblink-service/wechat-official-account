@@ -21,7 +21,7 @@ class Client extends AbstractApi
 
     public function send($payload)
     {
-        return $this->get('api/official/message/templates/send', array_merge([
+        return $this->post('api/official/message/templates/send', array_merge([
             'uuid' => $this->app->getUuid(),
         ], $payload));
     }
