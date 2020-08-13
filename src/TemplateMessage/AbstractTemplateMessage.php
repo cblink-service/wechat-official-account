@@ -35,6 +35,11 @@ abstract class AbstractTemplateMessage
         return $this;
     }
 
+    public function getNotice()
+    {
+        return $this->notice;
+    }
+
     public function getConfig()
     {
         return $this->config;
@@ -51,10 +56,10 @@ abstract class AbstractTemplateMessage
 
     public function send()
     {
-        if (empty($this->notice)) {
+        if (empty($this->getNotice())) {
             throw new \RuntimeException("未设置要发送的消息");
         }
 
-        return $this->getService()->send($this->notice->getTemplate());
+        return $this->getService()->send($this->getNotice()->getTemplate());
     }
 }
