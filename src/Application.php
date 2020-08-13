@@ -3,7 +3,13 @@
 namespace Cblink\Service\Wechat\OfficialAccount;
 
 use Cblink\Service\Kennel\ServiceContainer;
+use Cblink\Service\Wechat\OfficialAccount\TemplateMessage\Client;
 
+/**
+ * Class Application
+ * @package Cblink\Service\Wechat\OfficialAccount
+ * @property-read Client $official_account
+ */
 class Application extends ServiceContainer
 {
     protected function getCustomProviders(): array
