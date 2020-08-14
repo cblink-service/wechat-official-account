@@ -27,7 +27,7 @@ class TemplateMessage
         $this->setConfig($config);
     }
 
-    public function setNotification($notification)
+    public function setNotification(AbstractNotification $notification)
     {
         $this->notification = $notification;
 
