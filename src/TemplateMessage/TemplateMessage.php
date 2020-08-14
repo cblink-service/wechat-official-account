@@ -4,7 +4,7 @@ namespace Cblink\Service\Wechat\OfficialAccount\TemplateMessage;
 
 use Cblink\Service\Wechat\OfficialAccount\Application;
 
-abstract class AbstractTemplateMessage
+class TemplateMessage
 {
     /**
      * @var Application
