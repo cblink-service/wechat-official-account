@@ -23,7 +23,8 @@ class TemplateMessage
 
     public function __construct(AbstractNotification $notification = null, $config = [])
     {
-        $this->setNotification($notification);
+        $this->notification = $notification;
+
         $this->setConfig($config);
     }
 
