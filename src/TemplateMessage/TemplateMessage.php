@@ -14,29 +14,29 @@ class TemplateMessage
     /**
      * @var AbstractNotification
      */
-    protected $notice;
+    protected $notification;
 
     /**
      * @var array
      */
     protected $config;
 
-    public function __construct(AbstractNotification $notice = null, $config = [])
+    public function __construct(AbstractNotification $notification = null, $config = [])
     {
-        $this->setNotice($notice);
+        $this->setNotification($notification);
         $this->setConfig($config);
     }
 
-    public function setNotice($notice)
+    public function setNotification($notification)
     {
-        $this->notice = $notice;
+        $this->notification = $notification;
 
         return $this;
     }
 
-    public function getNotice()
+    public function getNotification()
     {
-        return $this->notice;
+        return $this->notification;
     }
 
     public function setConfig($config)
@@ -62,12 +62,12 @@ class TemplateMessage
 
     public function send()
     {
-        if (empty($this->getNotice())) {
+        if (empty($this->getNotification())) {
             throw new \RuntimeException("未设置要发送的消息");
         }
 
         return $this->getService()->send([
-            'template' => $this->getNotice()->getTemplate(),
+            'template' => $this->getNotification()->getTemplate(),
         ]);
     }
 }
