@@ -29,6 +29,16 @@ trait DefaultTemplateMessageDataItemTrait
         return $this->setDataItem('keyword3', $value);
     }
 
+    public function setKeyword4($value)
+    {
+        return $this->setDataItem('keyword4', $value);
+    }
+
+    public function setKeyword5($value)
+    {
+        return $this->setDataItem('keyword5', $value);
+    }
+
     public function setRemark($value)
     {
         return $this->setDataItem('remark', $value);
