@@ -3,12 +3,12 @@
 namespace Cblink\Service\Wechat\OfficialAccount;
 
 use Cblink\Service\Kennel\ServiceContainer;
-use Cblink\Service\Wechat\OfficialAccount\TemplateMessage\Client;
 
 /**
  * Class Application
  * @package Cblink\Service\Wechat\OfficialAccount
- * @property-read Client $official_account
+ * @property-read TemplateMessage\Client $official_account
+ * @property-read Auth\Client $auth
  */
 class Application extends ServiceContainer
 {
@@ -16,6 +16,7 @@ class Application extends ServiceContainer
     {
         return [
             TemplateMessage\ServiceProvider::class,
+            Auth\ServiceProvider::class,
         ];
     }
 
